@@ -32,7 +32,7 @@ trusted_clients:
 # this enables moonraker's update manager
 [update_manager]
 
-[timelapse]
+#[timelapse]
 ##   Following basic configuration is default to most images and don't need
 ##   to be changed in most scenarios. Only uncomment and change it if your
 ##   Image differ from standart installations. In most common scenarios 
