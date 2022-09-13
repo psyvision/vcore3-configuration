@@ -6,7 +6,6 @@ enable_debug_logging: False
 [file_manager]
 config_path: ~/klipper_config
 log_path: ~/klipper_logs
-enable_object_processing: True
 
 [authorization]
 cors_domains:
@@ -104,25 +103,3 @@ primary_branch: master
 origin: https://github.com/TypQxQ/Klipper_ToolChanger.git
 install_script: install.sh
 managed_services: klipper
-
-[update_manager KlipperOffsetProbe]
-type: git_repo
-path: ~/KlipperOffsetProbe
-primary_branch: main
-origin: https://github.com/Xonman/KlipperOffsetProbe.git
-managed_services: klipper
-
-# Crowsnest update_manager entry
-[update_manager crowsnest]
-type: git_repo
-path: ~/crowsnest
-origin: https://github.com/mainsail-crew/crowsnest.git
-managed_services: crowsnest
-
-[update_manager webcam_focus]
-type: git_repo
-path: ~/klipper-webcam_focus
-origin: https://github.com/guru-florida/klipper-webcam_focus.git
-is_system_service: False
-
-
