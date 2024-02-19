@@ -1,6 +1,12 @@
 [server]
 host = 0.0.0.0
 port = 7125
+max_upload_size = 1024
+
+[announcements]
+subscriptions = 
+	RatOS
+	mainsail
 
 [file_manager]
 enable_object_processing = True
@@ -28,6 +34,8 @@ trusted_clients =
 [history]
 
 [update_manager]
+refresh_interval = 168
+enable_auto_refresh = True
 
 [timelapse]
 output_path = ~/timelapse/
@@ -46,12 +54,16 @@ type = git_repo
 path = /home/pi/klipper_config/config
 origin = https://github.com/Rat-OS/RatOS-configuration.git
 install_script = /home/pi/klipper_config/config/scripts/ratos-install.sh
+managed_services = 
+	klipper
+	moonraker
 
 [update_manager client RatOSTheme]
 type = git_repo
 path = /home/pi/klipper_config/.theme
 origin = https://github.com/Rat-OS/RatOS-theme.git
 is_system_service = False
+primary_branch = v2.x
 
 [update_manager mainsail]
 type = web
@@ -75,13 +87,6 @@ path = ~/moonraker-timelapse
 origin = https://github.com/mainsail-crew/moonraker-timelapse.git
 managed_services = klipper moonraker
 
-[update_manager pam]
-type = git_repo
-primary_branch = main
-path = ~/pam
-origin = https://github.com/HelgeKeck/pam.git
-managed_services = klipper
-
 [update_manager klipper_toolchanger]
 type = git_repo
 path = ~/Klipper_ToolChanger
@@ -103,9 +108,11 @@ path = ~/crowsnest
 origin = https://github.com/mainsail-crew/crowsnest.git
 managed_services = crowsnest
 
-[update_manager webcam_focus]
+[update_manager ktamv]
 type = git_repo
-path = ~/klipper-webcam_focus
-origin = https://github.com/guru-florida/klipper-webcam_focus.git
-is_system_service = False
+path = ~/kTAMV
+origin = https://github.com/TypQxQ/kTAMV.git
+primary_branch = main
+install_script = install.sh
+managed_services = klipper
 
